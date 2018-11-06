@@ -1,0 +1,59 @@
+
+<!-- saved from url=(0051)https://www.cs.unm.edu/~angel/WebGL/7E/04/cube.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+attribute  vec4 vColor;
+varying vec4 fColor;
+
+uniform vec3 theta;
+uniform   mat4 mvpMatrix;
+void main() 
+{
+  
+
+    fColor = vColor;
+    gl_Position = mvpMatrix * vPosition;
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+   
+varying vec4 fColor;
+
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="./cube_files/webgl-utils.js.&#19979;&#36733;"></script>
+<script type="text/javascript" src="./cube_files/initShaders.js.&#19979;&#36733;"></script>
+<script type="text/javascript" src="./cube_files/MV.js.&#19979;&#36733;"></script>
+<script type="text/javascript" src="./cube_files/cube.js.&#19979;&#36733;"></script>
+<script type="text/javascript" src="./cube_files/1.js.&#19979;&#36733;;"></script>
+
+</head><body>
+<div>X -5<input id="walkX" type="range" min="-5" max="5" step="1" value="0"/>5 Y -5<input id="walkY" type="range" min="-5" max="5" step="1" value="0"/>5 Z -5<input id="walkZ" type="range" min="-5" max="5" step="1" value="2"/>5
+</div>
+<div>radius 0.05<input id="radiusSlider" type="range" min="0.05" max="2" step="0.05" value="1"/>8 theta -180<input id="thetaSlider" type="range" min="-180" max="180" step="5" value="0"/>180 phi -90<input id="phiSlider" type="range" min="-90" max="90" step="5" value="0"/>90
+</div>
+<div>
+<input id="pingxing" type="button" value="parallel" />
+<input id="toushi" type="button" value="perspective"/>
+</div>
+<div>scale 0.05<input id="cubeScale" type="range" min="0.05" max="2" step="0.05" value="1"/>2 
+</div>
+<div>
+
+<canvas id="gl-canvas" width="512" "="" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+   
+<br>
+
+
+</body></html>
